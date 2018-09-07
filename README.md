@@ -41,6 +41,6 @@ Typos and any kind of corrections are welcomed.
 
 ## Others
 
-[XML Essential Training](XmlEssentialTraining/XmlEssentialTraining.md)
+[XML Essential Training](./XmlEssentialTraining/XmlEssentialTraining.md) (wip)
 
 [Finding your time management style](./FindingYourTimeManagementStyle/FindingYourTimeManagementStyle.md)
