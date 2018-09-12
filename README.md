@@ -39,6 +39,8 @@ Typos and any kind of corrections are welcomed.
 
 [Unity User Interfaces and Animation](./UnityCertPrep/CertPrep_UnityUserInterfacesAnimation/CertPrep_UnityUserInterfacesAnimation.md)
 
+[Unity: Working with Google Firebase](./UnityWorkingWithGoogleFirebase/UnityWorkingWithGoogleFirebase.md)
+
 ## Others
 
 [XML Essential Training](./XmlEssentialTraining/XmlEssentialTraining.md) (wip)
