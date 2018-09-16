@@ -43,6 +43,10 @@ Typos and any kind of corrections are welcomed.
 
 [Unity User Interfaces and Animation](./UnityCertPrep/CertPrep_UnityUserInterfacesAnimation/CertPrep_UnityUserInterfacesAnimation.md)
 
+## C++
+
+A whole repository devoted to C++: [CppSeries](https://github.com/daltonbr/CppSeries)
+
 ## Others
 
 [XML Essential Training](./XmlEssentialTraining/XmlEssentialTraining.md) (wip)
