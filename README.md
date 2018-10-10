@@ -52,3 +52,5 @@ A whole repository devoted to C++: [CppSeries](https://github.com/daltonbr/CppSe
 [XML Essential Training](./XmlEssentialTraining/XmlEssentialTraining.md) (wip)
 
 [Finding your time management style](./FindingYourTimeManagementStyle/FindingYourTimeManagementStyle.md)
+
+[Threading in C#](./ThreadingInCSharp/ThreadingInCSharp.md)
