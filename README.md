@@ -21,6 +21,10 @@ Typos and any kind of corrections are welcomed.
 
 [iOS 11 Development Essential Training Create Your First App](./BuildAniOSApplication/iOS11DevelopmentEssentialTrainingCreateYourFirstApp/iOS11DevelopmentEssentialTrainingCreateYourFirstApp.md)
 
+[iOS 11 Development Essential Training: Application Architecture](BuildAniOSApplication/iOS11DevelopmentEssentialTrainingApplicationArchitecture/iOS11DevelopmentEssentialTrainingApplicationArchitecture.mds)
+
+[Building a Note Taking App for iOS 11 with Swift](BuildAniOSApplication/BuildingANoteTakingAppForiOS11WithSwift/BuildingANoteTakingAppForiOS11WithSwift.md)
+
 ## Game Development
 
 [3D Content Creation for VR](3DContentCreationForVR/3DContentCreationForVR.md)
@@ -41,8 +45,14 @@ Typos and any kind of corrections are welcomed.
 
 [Unity: Working with Google Firebase](./UnityWorkingWithGoogleFirebase/UnityWorkingWithGoogleFirebase.md)
 
+## C++
+
+A whole repository devoted to C++: [CppSeries](https://github.com/daltonbr/CppSeries)
+
 ## Others
 
 [XML Essential Training](./XmlEssentialTraining/XmlEssentialTraining.md) (wip)
 
 [Finding your time management style](./FindingYourTimeManagementStyle/FindingYourTimeManagementStyle.md)
+
+[Threading in C#](./ThreadingInCSharp/ThreadingInCSharp.md)
