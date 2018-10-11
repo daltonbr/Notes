@@ -35,6 +35,16 @@
         - [Tasks with Continuation](#tasks-with-continuation)
         - [Task Chaining](#task-chaining)
     - [3 Synchronization](#3-synchronization)
+        - [Blocking vs. Spinning](#blocking-vs-spinning)
+            - [Exclusive Locks](#exclusive-locks)
+            - [Nonexclusive locks](#nonexclusive-locks)
+            - [Signaling Constructs](#signaling-constructs)
+            - [Nonblocking Synchronization](#nonblocking-synchronization)
+        - [Nested Locks](#nested-locks)
+        - [Dead Lock](#dead-lock)
+        - [Reader / Writer Lock](#reader--writer-lock)
+        - [Mutex](#mutex)
+        - [Semaphore](#semaphore)
 
 <!-- /TOC -->
 
@@ -577,3 +587,365 @@ namespace TaskChaining
 
 ## 3 Synchronization
 
+- Act of coordinating actions of multiple threads or tasks running concurrently
+- Necessary when running multiple threads to get predictable outcomes
+
+Options for synchronization
+
+- Blocking methods
+- Locks
+- Signals
+- Nonblocking constructs
+
+Blocking methods
+
+- Sleep
+- Join
+- Task.Wait
+
+### Blocking vs. Spinning
+
+Blocking
+
+- Blocked threads **do not** consume CPU
+- Blocked threads **do** consume memory
+
+Spinning
+
+- Consumes CPU for as long as the thread is blocked
+- `While (x < limit)` uses CPU as long as the condition is not met
+
+Locks
+
+- Limit the number of threads
+- Exclusive locks
+- Nonexclusive locks
+
+#### Exclusive Locks
+
+- Allow only one thread to access a certain section of code
+- Alternative is to use `Monitor.Enter` / `Monitor.Exit`
+
+There is two types of exclusive locks
+
+- Lock
+- Mutex
+
+#### Nonexclusive locks
+
+- Semaphore
+- SemaphoreSlim
+- Reader/Writer
+- Allow multiple threads to access a resource
+
+Semaphore.maxCount = 1 // almost equivalent to a mutex
+
+#### Signaling Constructs
+
+- Threads pause until they receive a signal from another thread
+- Event wait handles and monitor's Wait/Pulse methods
+- (.NET 4+) CountownEvent and Barrier classes
+
+#### Nonblocking Synchronization
+
+- `Thread.MemoryBarrier`, `Thread.VolatileRead`, and `Thread.VolatileWrite`, the `volatile` keyword, and the `Interlocked` class
+- Protect access to a common field
+
+```csharp
+using System;
+using System.Threading.Tasks;
+
+namespace LocksAndMonitor
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Account account = new Account(20000);
+
+            //Action thisIsAnAction = () => account.WithdrawRandomly();
+            Task task1 = Task.Factory.StartNew(() => account.WithdrawRandomly());
+            Task task2 = Task.Factory.StartNew(() => account.WithdrawRandomly());
+            Task task3 = Task.Factory.StartNew(() => account.WithdrawRandomly());
+            Task.WaitAll(task1, task2, task3);
+            Console.WriteLine("All tasks complete");
+        }
+    }
+}
+
+internal class Account
+    {
+        Object caztonLock = new Object();
+        int balance;
+        Random random = new Random();
+        public Account(int initialBalance)
+        {
+            balance = initialBalance;
+        }
+
+        int Withdraw(int amount)
+        {
+            if (balance < 0)
+            {
+                throw new Exception("Not enough balance");
+            }
+
+            //Monitor.Enter(caztonLock);
+            //try
+            //{
+            lock (caztonLock)
+            {
+                if (balance >= amount)
+                {
+                    Console.WriteLine("Amount drawn: " + amount);
+                    balance = balance - amount;
+
+                    return balance;
+                }
+                //}
+                //finally
+                //{
+                //    Monitor.Exit(caztonLock);
+                //}
+                return 0;
+            }
+        }
+
+        public void WithdrawRandomly()
+        {
+            for (int i = 0; i < 100; i++)
+            {
+                var balance = Withdraw(random.Next(2000, 5000));
+                if (balance > 0)
+                {
+                    Console.WriteLine("Balance left" + balance);
+                }
+                else
+                {
+                    Console.WriteLine("Balance left" + balance);
+                }
+            }
+        }
+    }
+```
+
+### Nested Locks
+
+The most outer lock, will lock everything else
+
+```csharp
+using System.Threading.Tasks;
+
+namespace NestedLocks
+{
+    class Program
+    {
+        static object caztonLock = new object();
+        static void Main(string[] args)
+        {
+            lock (caztonLock)
+            {
+                DoSomething();
+            }
+        }
+
+        private static void DoSomething()
+        {
+            lock (caztonLock)
+            {
+                Task.Delay(2000);
+                AnotherMethod();
+            }
+        }
+
+        private static void AnotherMethod()
+        {
+            lock (caztonLock)
+            {
+
+            }
+        }
+    }
+}
+```
+
+### Dead Lock
+
+```csharp
+using System;
+using System.Threading;
+
+namespace Deadlocks
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            object caztonLock = new object();
+            object chanderLock = new object();
+            new Thread(() =>
+            {
+                lock (caztonLock)
+                {
+                    Console.WriteLine("Cazton Lock obtained");
+                    Thread.Sleep(2000);
+                    lock (chanderLock)
+                    {
+                        Console.WriteLine("Chander Lock obtained");
+                    }
+                }
+            }).Start();
+            lock (chanderLock)
+            {
+                Console.WriteLine("Main Thread obtained Chander Lock");
+                Thread.Sleep(1000);
+                lock (caztonLock)
+                {
+                    Console.WriteLine("Main Thread obtained Chander Lock");
+                }
+            }
+        }
+    }
+}
+```
+
+### Reader / Writer Lock
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace ReaderWriterlocks
+{
+    class Program
+    {
+        static ReaderWriterLockSlim readerWriterLockSlim = new ReaderWriterLockSlim();
+        static Dictionary<int, string> persons = new Dictionary<int, string>();
+        static Random random = new Random();
+        static void Main(string[] args)
+        {
+            var task1 = Task.Factory.StartNew(Read);
+            var task2 = Task.Factory.StartNew(Write, "Cazton");
+            var task3 = Task.Factory.StartNew(Write, "Chander");
+            var task4 = Task.Factory.StartNew(Read);
+            var task5 = Task.Factory.StartNew(Read);
+            Task.WaitAll(task1, task2, task3, task4, task5);
+        }
+
+        static void Read()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                readerWriterLockSlim.EnterReadLock();
+                Thread.Sleep(50);
+                readerWriterLockSlim.ExitReadLock();
+            }
+        }
+
+        static void Write(object user)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                //int id = random.Next(2000, 5000);
+                int id = GetRandom();
+                readerWriterLockSlim.EnterWriteLock();
+                var person = "Person " + i;
+                persons.Add(id, person);
+                readerWriterLockSlim.ExitWriteLock();
+                Console.WriteLine(user + " added " + person);
+                Thread.Sleep(250);
+            }
+        }
+
+        static int GetRandom()
+        {
+            lock (random)
+            {
+                return random.Next(2000, 5000);
+            }
+        }
+    }
+}
+```
+
+### Mutex
+
+```csharp
+using System;
+using System.Threading;
+
+namespace MutexLock
+{
+    class Program
+    {
+        static Mutex mutex = new Mutex();
+        static void Main(string[] args)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+
+                Thread thread = new Thread(AcquireMutex);
+                thread.Name = string.Format("Thread{0}", i+1);
+                thread.Start();
+            }
+        }
+
+        private static void AcquireMutex()
+        {
+            if(!mutex.WaitOne(TimeSpan.FromSeconds(1), false))
+            {
+                Console.WriteLine("{0}", Thread.CurrentThread.Name);
+                return;
+            }
+            //mutex.WaitOne();
+            DoSomething();
+            mutex.ReleaseMutex();
+            Console.WriteLine("Mutex released by {0}", Thread.CurrentThread.Name);
+        }
+
+        private static void DoSomething()
+        {
+            Thread.Sleep(3000);
+
+        }
+    }
+}
+```
+
+### Semaphore
+
+Since "original" semaphores are a little resource intensive.
+`SemaphoreSlim`, as the name suggests, is a much faster and less resource intensive version that was introduced in .NET 4.0
+
+Semaphores ensure that no more than a specified number of concurrent threads can access a particular resource.
+
+```csharp
+using System;
+using System.Threading;
+
+namespace Semaphores
+{
+    class Program
+    {
+        static SemaphoreSlim semaphoreSlim = new SemaphoreSlim(3);
+        static void Main(string[] args)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                new Thread(EnterSemaphore).Start(i+1);
+            }
+        }
+
+        private static void EnterSemaphore(object id)
+        {
+            Console.WriteLine(id + " is waiting to be part of the club");
+            semaphoreSlim.Wait();
+            Console.WriteLine(id + " part of the club");
+            Thread.Sleep(1000 / (int)id);
+            Console.WriteLine(id + " left the club");
+        }
+    }
+}
+```
