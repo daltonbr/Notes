@@ -33,7 +33,16 @@ Typos and any kind of corrections are welcomed.
 
 [AR for Mobile Developers](./ARForMobileDevelopers/ARForMobileDevelopers.md)
 
-### Unity Cert Prep
+### Unity
+
+[Unity: Working with Google Firebase](./UnityWorkingWithGoogleFirebase/UnityWorkingWithGoogleFirebase.md)
+
+* Unity Talks
+  * [Unite 2017 - Performance Optimization for beginners](./UnityTalks/PerformanceOptimizationForBegginers.md) - [Youtube Video](https://www.youtube.com/watch?v=1e5WY2qf600)
+
+[Threading in C#](./ThreadingInCSharp/ThreadingInCSharp.md)
+
+#### Unity Cert Prep
 
 [Unity Material, Lighting and Effects](./UnityCertPrep/CertPrep_UnityMaterialLightingEffects/CertPrep_UnityMaterialsLighingEffects.md)
 
@@ -42,8 +51,6 @@ Typos and any kind of corrections are welcomed.
 [Unity Scripting and Publishing](./UnityCertPrep/CertPrep_UnityScriptingAndPublishing/CertPrepUnityScriptingAndPublishing.md)
 
 [Unity User Interfaces and Animation](./UnityCertPrep/CertPrep_UnityUserInterfacesAnimation/CertPrep_UnityUserInterfacesAnimation.md)
-
-[Unity: Working with Google Firebase](./UnityWorkingWithGoogleFirebase/UnityWorkingWithGoogleFirebase.md)
 
 ## C++
 
@@ -55,4 +62,3 @@ A whole repository devoted to C++: [CppSeries](https://github.com/daltonbr/CppSe
 
 [Finding your time management style](./FindingYourTimeManagementStyle/FindingYourTimeManagementStyle.md)
 
-[Threading in C#](./ThreadingInCSharp/ThreadingInCSharp.md)
