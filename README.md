@@ -9,21 +9,21 @@ Typos and any kind of corrections are welcomed.
 
 ### Android
 
-[Android Studio Essential Training](./AndroidStudioEssentialTraining/AndroidStudioEssentialTraining.md)
+[Android Studio Essential Training](./Android/AndroidStudioEssentialTraining/AndroidStudioEssentialTraining.md)
 
-[Android Development Essential Training: Create Your First App](./AndroidDevelopmentEssentialTrainingCreateYourFirstApp/AndroidDevelopmentEssentialTrainingCreateYourFirstApp.md)
+[Android Development Essential Training: Create Your First App](./Android/AndroidDevelopmentEssentialTrainingCreateYourFirstApp/AndroidDevelopmentEssentialTrainingCreateYourFirstApp.md)
 
-[Android Development Essential Training: Manage Navigation and Events](./AndroidDevelopmentEssentialTrainingManageNavigationAndEvents/AndroidDevelopmentEssentialTrainingManageNavigationAndEvents.md)
+[Android Development Essential Training: Manage Navigation and Events](./Android/AndroidDevelopmentEssentialTrainingManageNavigationAndEvents/AndroidDevelopmentEssentialTrainingManageNavigationAndEvents.md)
 
 ### iOS
 
 #### Build an iOS Application
 
-[iOS 11 Development Essential Training Create Your First App](./BuildAniOSApplication/iOS11DevelopmentEssentialTrainingCreateYourFirstApp/iOS11DevelopmentEssentialTrainingCreateYourFirstApp.md)
+[iOS 11 Development Essential Training Create Your First App](./iOS/BuildAniOSApplication/iOS11DevelopmentEssentialTrainingCreateYourFirstApp/iOS11DevelopmentEssentialTrainingCreateYourFirstApp.md)
 
-[iOS 11 Development Essential Training: Application Architecture](BuildAniOSApplication/iOS11DevelopmentEssentialTrainingApplicationArchitecture/iOS11DevelopmentEssentialTrainingApplicationArchitecture.mds)
+[iOS 11 Development Essential Training: Application Architecture](./iOS/BuildAniOSApplication/iOS11DevelopmentEssentialTrainingApplicationArchitecture/iOS11DevelopmentEssentialTrainingApplicationArchitecture.mds)
 
-[Building a Note Taking App for iOS 11 with Swift](BuildAniOSApplication/BuildingANoteTakingAppForiOS11WithSwift/BuildingANoteTakingAppForiOS11WithSwift.md)
+[Building a Note Taking App for iOS 11 with Swift](./iOS/BuildAniOSApplication/BuildingANoteTakingAppForiOS11WithSwift/BuildingANoteTakingAppForiOS11WithSwift.md)
 
 ## Game Development
 
