@@ -17,6 +17,8 @@ Typos and any kind of corrections are welcomed.
 
 ### iOS
 
+[Swift 4 Essential Training](./iOS/Swift4EssentialTraining/Swift4EssentialTraining.md)
+
 #### Build an iOS Application
 
 [iOS 11 Development Essential Training Create Your First App](./iOS/BuildAniOSApplication/iOS11DevelopmentEssentialTrainingCreateYourFirstApp/iOS11DevelopmentEssentialTrainingCreateYourFirstApp.md)
