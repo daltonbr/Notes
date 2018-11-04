@@ -12,18 +12,31 @@
  8. Use the `append` method on **playerString** to interpolate the **isAlive** variable in some way
  */
 // 1
+var characterName = "Dalton"
+var characterClass = "Barbarian"
 
 // 2
+characterName += " Lima"
 
 // 3
+var hpPercentDouble = 75.53
 
 // 4
+var hpPercentInt: Int = Int(hpPercentDouble)
 
 // 5
+//var playerString = characterName + " is playing as " + characterClass
+var playerString = "Name: \(characterName) --- Class: \(characterClass)\n\n  Stats: \(hpPercentInt)%HP\n\n"
 
 // 6
+print(playerString)
 
 // 7
+var isAlive: Bool = true
 
 // 8
+//isAlive = !isAlive
+//playerString += isAlive ? " and it is ALIVE!" : " and sadly, it is DEAD!"
+playerString.append("Currently Alive: \(isAlive)")
+print(playerString)
 //: [Previous Topic](@previous)

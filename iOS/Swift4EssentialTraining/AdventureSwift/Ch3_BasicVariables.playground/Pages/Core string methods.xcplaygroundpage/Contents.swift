@@ -10,9 +10,17 @@
  + Use each of the mentioned class methods to alter the starting string
  */
 // Test variable
-
+var welcomeText = "Swift 4"
 
 // More string class methods
+welcomeText.contains("S")
+welcomeText.contains("s")   // case sensitive
+welcomeText.append(contentsOf: ", the adventure continues!")
+welcomeText.insert(contentsOf: "Welcome to ", at: welcomeText.startIndex)
+welcomeText.remove(at: welcomeText.index(before: welcomeText.endIndex))
+welcomeText.split(separator: ",")
+
+print(welcomeText)
 
 /*:
  [Previous Topic](@previous)

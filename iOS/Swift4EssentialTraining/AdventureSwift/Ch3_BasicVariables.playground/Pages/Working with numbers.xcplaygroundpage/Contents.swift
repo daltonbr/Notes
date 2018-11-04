@@ -11,12 +11,15 @@
  + Add different number types together with and without type annotations
  */
 // Test variables
-
+var goldAsDouble = 5.99
 
 // Explicit conversions
-
+var goldAsInt = Int(goldAsDouble) // Truncating
+var goldAsString = String(goldAsDouble)
 
 // Inferred conversion with operators
+var goldResult_implicit = 37 + 2.55
+var goldResult_explicit = goldAsDouble + Double(goldAsInt)
 
 /*:
  [Previous Topic](@previous)

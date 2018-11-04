@@ -12,3 +12,10 @@ Swift lets you create variables for storing values and referencing them by name.
 + Create a constant called **maxHP** and make it 100.
 + Try and change **hp** and **maxHP** to different values.
 */
+var hp = 90
+let maxHP = 100
+
+hp = 42
+//maxHP = 110
+
+var item = 5, equipment = 10, gold = 100

@@ -12,16 +12,22 @@
  + Explore some of the common string class methods 
  */
 // Declaring strings
-
+var emptyString = ""
+var emptyString2 = String()
+var characterName = "Dalton"
 
 // Concatenation
-
+var fullCharacterName = characterName + " Varussa de Oliveira "
+fullCharacterName += " Lima"
 
 // String interpolation
-
+let characterDescription = "Welcome \(fullCharacterName)! Are you ready to start your Swift Adventure?"
+print(characterDescription)
 
 // Common class methods
-
+characterName.count
+characterName.isEmpty
+emptyString.isEmpty
 /*:
  [Previous Topic](@previous)
  

@@ -11,10 +11,12 @@
  + Use the bang operator to change the boolean value to its opposite
  */
 // Test variable
-
+var characterIsRunning: Bool = false
+characterIsRunning = true
+//characterIsRunning = 3
 
 // Bang operator (toggle)
-
+characterIsRunning = !characterIsRunning
 /*:
  [Previous Topic](@previous)
  

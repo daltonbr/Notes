@@ -9,7 +9,14 @@
  + Explore single and multiline comment formats
  + Use the `print` statement to log out a simple string
  */
+// Single line comment
+/* This is a multiline comment
+ Yay
+Dalton Lima - November, 4th 2018
+ */
 
+var notHelloWorld = "Hello Swift 4!"
+print(notHelloWorld)
 /*:
  [Previous Topic](@previous)
  
