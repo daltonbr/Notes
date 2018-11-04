@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios'>
+    <pages>
+        <page name='Basic Functions'/>
+        <page name='Complex Functions'/>
+        <page name='Overloading Functions'/>
+        <page name='Function Types'/>
+        <page name='Understanding Closures'/>
+        <page name='Type Aliasing'/>
+        <page name='Challenge'/>
+    </pages>
+</playground>

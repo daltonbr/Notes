@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='raw'>
+    <pages>
+        <page name='Swift Arrays'/>
+        <page name='Core Array Methods'/>
+        <page name='Swift Dictionaries'/>
+        <page name='Core Dictionary Methods'/>
+        <page name='Working with Sets'/>
+        <page name='Core Set Methods'/>
+        <page name='Swift Tuples'/>
+        <page name='Challenge'/>
+    </pages>
+</playground>

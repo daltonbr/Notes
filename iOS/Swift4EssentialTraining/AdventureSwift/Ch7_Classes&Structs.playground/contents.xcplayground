@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='raw'>
+    <pages>
+        <page name='Basic Swift Classes'/>
+        <page name='Methods &amp; Subclassing'/>
+        <page name='Basic Swift Structs'/>
+        <page name='Struct Methods and Uses'/>
+        <page name='Swift Enumeration Basics'/>
+        <page name='Enum Raw &amp; Associated Values'/>
+        <page name='Introduction to Protocols'/>
+        <page name='Challenge'/>
+    </pages>
+</playground>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='raw'>
+    <pages>
+        <page name='Variables and Constants'/>
+        <page name='Logging and commenting'/>
+        <page name='Type safety and inference'/>
+        <page name='Swift Operators'/>
+        <page name='Basic strings'/>
+        <page name='Core string methods'/>
+        <page name='Working with numbers'/>
+        <page name='Basic booleans'/>
+        <page name='Challenge'/>
+    </pages>
+</playground>

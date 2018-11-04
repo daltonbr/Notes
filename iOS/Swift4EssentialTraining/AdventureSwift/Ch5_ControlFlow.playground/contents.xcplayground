@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='raw'>
+    <pages>
+        <page name='If Statement'/>
+        <page name='Declaring _ Unwrapping Optionals'/>
+        <page name='Chaining Optionals'/>
+        <page name='Using For-In Loops'/>
+        <page name='While Loops'/>
+        <page name='The Switch Statement'/>
+        <page name='Using the Guard Statement'/>
+        <page name='Challenge'/>
+    </pages>
+</playground>
