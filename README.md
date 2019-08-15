@@ -2,8 +2,7 @@
 
 This is a compilation of my personal notes from various online courses.
 I develop this habit of taking notes to improve my English writing skills and to have a place to look up when I need to recap something from previous courses.
-Feel free to use these notes as you wish.  
-Typos and any kind of corrections are welcomed.  
+Feel free to use these notes as you wish.
 
 ## Mobile Development
 
@@ -60,9 +59,10 @@ A whole repository devoted to C++: [CppSeries](https://github.com/daltonbr/CppSe
 
 ## Others
 
-[XML Essential Training](./XmlEssentialTraining/XmlEssentialTraining.md) (wip)
+* [XML Essential Training](./XmlEssentialTraining/XmlEssentialTraining.md) (wip)
 
-[Finding your time management style](./FindingYourTimeManagementStyle/FindingYourTimeManagementStyle.md)
+* [Finding your time management style](./FindingYourTimeManagementStyle/FindingYourTimeManagementStyle.md)
 
-[OpenGL Series](https://github.com/daltonbr/OpenGL)
+* [OpenGL Series](https://github.com/daltonbr/OpenGL)
 
+[Python Tutorial for Programmers](./Python101/Python-Intro.md) - a basic crash course in Python
