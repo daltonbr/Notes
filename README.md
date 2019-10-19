@@ -59,6 +59,9 @@ A whole repository devoted to C++: [CppSeries](https://github.com/daltonbr/CppSe
 
 ## Others
 
+* [CSharp Test Driven Development - TDD](./CSharp/TDD/CSharp-TDD.md)
+  * Two projects .Net Core as a bonus inside
+
 * [XML Essential Training](./XmlEssentialTraining/XmlEssentialTraining.md) (wip)
 
 * [Finding your time management style](./FindingYourTimeManagementStyle/FindingYourTimeManagementStyle.md)
