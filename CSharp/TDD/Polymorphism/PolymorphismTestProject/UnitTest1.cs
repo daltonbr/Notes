@@ -12,7 +12,7 @@ namespace PolymorphismTestProject
             // Arrange
             int weeklyHours = 55;
             int wage = 70;
-            int salary = 1;
+            int salary = 40 * wage;
             
             var employee = new Employee();
 
@@ -31,7 +31,7 @@ namespace PolymorphismTestProject
             // Arrange
             int weeklyHours = 55;
             int wage = 70;
-            int salary = 1;
+            int salary = weeklyHours * wage;
 
             Contractor employee = new Contractor();
 
@@ -50,11 +50,11 @@ namespace PolymorphismTestProject
             // Arrange
             int weeklyHours = 55;
             int wage = 70;
-            int salary = 1;
+            int salary = 40 * wage;
 
             var employee = new Employee();
 
-            string expectedResult = $@"This ANGRY EMPLOYEE worked {weeklyHours} hours.Paid for 40 hours at $ {wage} / hour = ${salary}";
+            string expectedResult = $@"Problem1-This ANGRY EMPLOYEE worked {weeklyHours} hours.Paid for 40 hours at $ {wage} / hour = ${salary}";
 
             // Act
             string result = employee.CalculateWeeklySalary(weeklyHours, wage);
@@ -66,7 +66,20 @@ namespace PolymorphismTestProject
         [TestMethod]
         public void CalculateWeeklySalaryForContractorTest_70wage55hoursDoesNotReturnCorrectString()
         {
-            Assert.AreNotEqual(1, 1);
+            // Arrange
+            int weeklyHours = 55;
+            int wage = 70;
+            int salary = weeklyHours * wage;
+
+            Contractor employee = new Contractor();
+
+            string expectedResult = $@"Problem2-This HAPPY CONTRACTOR worked {weeklyHours} hours.Paid for {weeklyHours} hours at $ {wage} / hour = ${salary}";
+
+            // Act
+            string result = employee.CalculateWeeklySalary(weeklyHours, wage);
+
+            // Assert
+            Assert.AreNotEqual(result, expectedResult);
         }
 
     }

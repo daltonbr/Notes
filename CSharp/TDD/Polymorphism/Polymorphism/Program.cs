@@ -5,14 +5,14 @@ using System.Runtime.CompilerServices;
 
 namespace Polymorphism
 {
-    class Program
+    internal class Program
     {
         private static void Main(string[] args)
         {
             const int hours = 55;
             const int wage = 70;
 
-            List<Employee> employees = GetEmployees();
+            List<Employee> employees = Utils.GetEmployees();
 
             foreach (var employee in employees)
             {
@@ -20,12 +20,15 @@ namespace Polymorphism
             }
         }
 
-        private static List<Employee> GetEmployees()
+        public static class Utils
         {
-            var someEmployee = new Employee();
-            var someContractor = new Contractor();
-            var everyone = new List<Employee> {someEmployee, someContractor};
-            return everyone;
+            public static List<Employee> GetEmployees()
+            {
+                var someEmployee = new Employee();
+                var someContractor = new Contractor();
+                var everyone = new List<Employee> { someEmployee, someContractor };
+                return everyone;
+            }
         }
     }
 }
