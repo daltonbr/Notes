@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>    
+    <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                mc:Ignorable="d"
+                x:Class="XamarinNotes.MainPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height=".5*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Source="clippy" BackgroundColor="PowderBlue"
+            Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"/>
+
+        <Editor d:Grid.Column="0" d:Grid.ColumnSpan="2" d:Grid.Row="1"
+                Placeholder="Enter Note Here"/>
+
+        <Button Grid.Row="2" Grid.Column="0" Text="Save" TextColor="Black"
+                BackgroundColor="Green"/>
+        <Button Grid.Row="2" Grid.Column="1" Text="Erase" TextColor="Black"
+                BackgroundColor="Red"/>
+
+        <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Text="Cool"
+                FontSize="Large"/>
+    </Grid>
+</ContentPage>
