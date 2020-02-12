@@ -38,8 +38,9 @@ Feel free to use these notes as you wish.
 
 [Unity: Working with Google Firebase](./UnityWorkingWithGoogleFirebase/UnityWorkingWithGoogleFirebase.md)
 
-* Unity Talks
-  * [Unite 2017 - Performance Optimization for beginners](./UnityTalks/PerformanceOptimizationForBegginers.md) - [Youtube Video](https://www.youtube.com/watch?v=1e5WY2qf600)
+[Performance Optimization for beginners](./UnityTalks/PerformanceOptimizationForBegginers.md) - (based on [Unite 2017 talk](https://www.youtube.com/watch?v=1e5WY2qf600))
+
+[Addressables](./UnityAddressable/Addressable.md) - (based on [Unite LA 2018](https://www.youtube.com/watch?v=U8-yh5nC1Mg) & [Unite Copenhagen 2019](https://www.youtube.com/watch?v=THs7h-wXHBg) talks)
 
 [Threading in C#](./ThreadingInCSharp/ThreadingInCSharp.md)
 
