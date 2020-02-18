@@ -87,3 +87,88 @@ https://github.com/Unity-Technologies/Addressables-Sample
 * Addressables + DOTS in 2020.
 * Content Delivery Service.
 
+```csharp
+using System.Threading.Tasks;
+
+public static class AssetRefLoader
+{
+  public static async Task CreateAssetAddToList<T>(AssetReference reference, List<T> completedObjects) where T : Object
+  {
+    completedObjects.Add(await reference.InstantiateAsync().Task as T);
+  }
+
+  public static async Task CreateAssetsAddToList<T>(List<AssetReference> references, List<T> completedObjects) where T : Object
+  {
+    foreach (var reference in references
+    {
+      completedObjects.Add(await reference.InstantiateAsync().Task as T);
+    }
+  }
+}
+
+```
+
+```csharp
+using System.Threading.Tasks;
+
+public static class AddressableLocationLoader
+{
+  public static async Task GetAll(string label, IList<IResourceLocation> loadedLocations)
+  {
+    var unloadedLocations = await Addressables.LoadResourceLocationsAsync(label).Task;
+
+    foreach (var location in unloadedLocations)
+    {
+      loadedLocations.Add(location);
+    }
+  }
+}
+
+```
+
+```csharp
+using UnityEngine;
+using UnityEngine.AddressableAssets;
+using AssetBundles;
+using System.Collections;
+using System.Collections.Generic;
+
+public class CharacterDatabase
+{
+  static protected Dictionary<string, Character> m_CharactersDict;
+
+  static public Dictionary<string, Character> dictionary => m_CharactersDict;
+
+  static protected bool m_Loaded = false;
+  static public bool loaded => m_Loaded;
+
+  static public Character GetCharacter(string type)
+  {
+    Character c;
+    if (m_CharactersDict == null || !m_CharacterDict.TryGetValue(type, out c))
+      return null;
+    return c;
+  }
+
+  static public IEnumerator LoadDatabase()
+  {
+    if (m_CharactersDict == null)
+    {
+      m_CharactersDict = new Dictionary<string, Character>();
+
+      yield return Addressables.LoadAssets<GameObject>("character", op =>
+      {
+        Character c = op.Result.GetComponent<Character>();
+        if (c != null)
+        {
+          m_CharactersDict.Add(c.characterName, c);
+        }
+      });
+
+      m_Loaded = true;
+    }
+  }
+
+}
+
+```
