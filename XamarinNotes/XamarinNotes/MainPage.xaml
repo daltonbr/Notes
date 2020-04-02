@@ -3,8 +3,12 @@
                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                 xmlns:d="http://xamarin.com/schemas/2014/forms/design"
                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                mc:Ignorable="d"
-                x:Class="XamarinNotes.MainPage">
+                xmlns:local="clr-namespace:XamarinNotes.ViewModels" 
+                mc:Ignorable="d" x:Class="XamarinNotes.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:MainPageViewModel/>
+    </ContentPage.BindingContext>
 
     <Grid>
         <Grid.RowDefinitions>
@@ -22,14 +26,30 @@
             Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"/>
 
         <Editor d:Grid.Column="0" d:Grid.ColumnSpan="2" d:Grid.Row="1"
-                Placeholder="Enter Note Here"/>
+                Placeholder="Enter Note Here"
+                Text="{Binding TheNote}"/>
 
         <Button Grid.Row="2" Grid.Column="0" Text="Save" TextColor="Black"
-                BackgroundColor="Green"/>
-        <Button Grid.Row="2" Grid.Column="1" Text="Erase" TextColor="Black"
-                BackgroundColor="Red"/>
+                BackgroundColor="Green"
+                Command="{Binding SaveCommand}"/>
 
-        <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Text="Cool"
-                FontSize="Large"/>
+        <Button Grid.Row="2" Grid.Column="1" Text="Erase" TextColor="Black"
+                BackgroundColor="Red"
+                Command="{Binding EraseCommand}"/>
+
+        <CollectionView ItemsSource="{Binding AllNotes}" Grid.Row="3" Grid.ColumnSpan="2">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Frame>
+                            <Label Text="{Binding .}" FontSize="Title"/>
+                        </Frame>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!--<Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Text="Cool"
+                FontSize="Large"/>-->
     </Grid>
 </ContentPage>
