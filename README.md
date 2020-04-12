@@ -70,3 +70,5 @@ A whole repository devoted to C++: [CppSeries](https://github.com/daltonbr/CppSe
 * [OpenGL Series](https://github.com/daltonbr/OpenGL)
 
 [Python Tutorial for Programmers](./Python101/Python-Intro.md) - a basic crash course in Python
+
+* [Maya to Unity](./Maya/MayaToUnity.md) - basic instruction to export rigs and animations from Maya to Unity
