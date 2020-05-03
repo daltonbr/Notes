@@ -58,6 +58,10 @@ Feel free to use these notes as you wish.
 
 A whole repository devoted to C++: [CppSeries](https://github.com/daltonbr/CppSeries)
 
+## AWS
+
+* [AWS Developer - Big Picture](./AWS/AWS-BigPicture/AWS-BigPicture.md)
+
 ## Others
 
 * [CSharp Test Driven Development - TDD](./CSharp/TDD/CSharp-TDD.md)
