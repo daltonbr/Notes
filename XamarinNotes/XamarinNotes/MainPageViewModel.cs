@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
 
-namespace XamarinNotes
+namespace XamarinNotes.ViewModels
 {
     public class MainPageViewModel : INotifyPropertyChanged
     {
@@ -17,27 +17,29 @@ namespace XamarinNotes
             SaveCommand = new Command(() =>
             {
                 AllNotes.Add(TheNote);
+
+                TheNote = string.Empty;
             });
         }
 
-        public ObservableColletion<string> AllNotes { get; set; }
+        public ObservableCollection<string> AllNotes { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private string theNote;
+        private string _theNote;
         public string TheNote
         {
-            get => theNote;
+            get => _theNote;
             set
             {
-                theNote = value;
+                _theNote = value;
                 var args = new PropertyChangedEventArgs(nameof(TheNote));
 
                 PropertyChanged?.Invoke(this, args);
             }
         }
 
-        Command SaveCommand { get; }
-        Command EraseCommand { get; }
+        public Command SaveCommand { get; }
+        public Command EraseCommand { get; }
     }
 }
